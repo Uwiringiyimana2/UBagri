@@ -48,6 +48,9 @@ class Weather(Base):
     Temperature = Column(String(10), nullable=False)
     Weather = Column(String(20))
 
+    def __repr__(self):
+        return f"Weather('{self.Temperature}' - '{self.Weather}')"
+
 class Product(Base):
     """Product information"""
     __tablename__ = "product"
@@ -56,6 +59,9 @@ class Product(Base):
     price = Column(String(20), nullable=False)
     quantity = Column(String(20), nullable=False)
     user_id = Column(Integer, ForeignKey("user.id"))
+
+    def __repr__(self):
+        return f"Product('{self.name}' - '{self.price}')"
 
 
 Base.metadata.create_all(engine)

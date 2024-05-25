@@ -34,6 +34,7 @@ class Address(Base):
     sector = Column(String(20), nullable=False)
     cell = Column(String(20), nullable=False)
     village = Column(String(20), nullable=False)
+    user_id = Column(Integer, ForeignKey('user.id'))
     weather = relationship("Weather", backref="address")
     
     def __repr__(self):

@@ -1,10 +1,11 @@
 $(document).ready(function () {
     const apiKey = '7643c850c0f525a188fcc34a148f0f98';
-    const customerInputCity = 'KIGALI';
     const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
-    const url = `${baseURL}appid=${apiKey}&q=${customerInputCity}`;
-
+    
     $('.middle-section .state button').click(function () {
+        const customerInputCity = $('#cityInput').val();
+        const url = `${baseURL}appid=${apiKey}&q=${customerInputCity}`;
+
         $.get(url, function (data) {
             if (data.cod === '400' || data.cod === '404') {
                 $('#error').html("<p>Not a valid city. Please input another city</p>");

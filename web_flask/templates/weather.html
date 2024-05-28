@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="../static/styles/common.css">
         <link rel="stylesheet" href="../static/styles/footer.css">
         <link rel="stylesheet" href="../static/styles/weather.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="static/scripts/api.js"></script>
         <title>UBagri</title>
     </head>
     
@@ -40,8 +42,9 @@
                     </div>
                     <div class="temperature">
                         <h2>Temperature</h2>
-                        <p>higher level: 23 c</p>
-                        <p>low level: 17 c</p> 
+                        <h5 id="error"></h5>
+                        <h3 id="city"></h3>
+                        <div id="weather"></div>
                     </div>
                 </div>
             </section>

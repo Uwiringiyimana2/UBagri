@@ -2,7 +2,7 @@ $(document).ready(function () {
     const apiKey = '7643c850c0f525a188fcc34a148f0f98';
     const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
     
-    $('.middle-section .state button').click(function () {
+    $('.middle-section .state #realTime').click(function () {
         const customerInputCity = $('#cityInput').val();
         const url = `${baseURL}appid=${apiKey}&q=${customerInputCity}`;
 
@@ -20,8 +20,8 @@ $(document).ready(function () {
 
             const kelvin = data['main']['temp'];
             const [celsius_temp, fahrenheit_temp] = kelvinCelsius(kelvin);
-            const sunrise = convertToLocalTime(data['sys']['sunrise'] * 1000);
-            const sunset = convertToLocalTime(data['sys']['sunset'] * 1000);
+            const sunrise = convertToLocalTime(data['sys']['sunrise']);
+            const sunset = convertToLocalTime(data['sys']['sunset']);
 
             const weatherInfo = `
                 <p>Temperature: ${celsius_temp.toFixed(2)} C or ${fahrenheit_temp.toFixed(2)} F</p>
@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
 
     function convertToLocalTime(dt) {
-        const date = new Date(dt);
+        const date = new Date(dt * 1000);
 
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -48,4 +48,5 @@ $(document).ready(function () {
 
         return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${period}`;
     }
+
 });

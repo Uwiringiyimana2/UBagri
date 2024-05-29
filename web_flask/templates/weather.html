@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="../static/styles/weather.css">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="static/scripts/api.js"></script>
+        <script src="static/scripts/forecast.js"></script>
+        <script src="static/scripts/date.js"></script>
         <title>UBagri</title>
     </head>
     
@@ -17,8 +19,8 @@
             <nav class="navigation">
                 <a href="{{ url_for('ubagri') }}">About</a>
                 <a href="{{ url_for('weather') }}">Weather</a>
-                <a href="#">Education</a>
                 <a href="#">Market</a>
+                <a href="{{ url_for('account') }}">Account</a>
             </nav>
             <div class="search-button">
                 <img src="../static/images/search.png">
@@ -37,7 +39,7 @@
                     <span>for session</span>
                 </div>
                 <div class="date">
-                    <div class="day">
+                    <div id="day">
                         <p>Friday, May 24</p>
                     </div>
                     <div class="temperature">
@@ -116,14 +118,12 @@
                 </div>
             </section>
             <div class="forecast">
-                <input type="text" id="cityInput" name="cityInput" placeholder="Input City" />
-                <button #forecast">
-                    Submit
-                </button>
-                <h5 id="error"></h5>
-                <h3 id="city"></h3>
-                <div id="weather"></div>
-            </div>
+                <input type="text" id="cityInputF" name="cityInput" placeholder="Input City" />
+                <button id="forecast">Submit</button>
+                <h5 id="errorF"></h5>
+                <h3 id="cityF" class="city-name"></h3>
+                <div id="weatherF" class="weather-container"></div>
+            </div>            
         </div>
 
 

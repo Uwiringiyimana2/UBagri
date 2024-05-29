@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, redirect, request
+from db import User, session
 
 
 app = Flask(__name__)
@@ -18,7 +19,22 @@ def ubagri():
 @app.route('/weather')
 def weather():
     """Weather Info"""
-    render_template('weather.html')
+    return render_template('weather.html')
+
+@app.route('/account', methods=('GET', 'POST'))
+def account():
+    """New account"""
+    if request.method == 'POST':
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        email = request.form['email']
+        phonenumber = request.form['phonenumber']
+        user = User(firstname=firstname, lastname=lastname, email=email, phone_number=phonenumber)
+        session.add(user)
+        session.commit()
+        return redirect(url_for('ubagri'))
+    
+    return render_template('account.html')
 
 
 if __name__ == "__main__":

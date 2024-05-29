@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="us-en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/styles/header.css">
+        <link rel="stylesheet" href="../static/styles/common.css">
+        <link rel="stylesheet" href="../static/styles/footer.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <title>UBagri</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="logo"><img src="../static/images/logo.jpeg"></div>
+            <nav class="navigation">
+                <a href="{{ url_for('ubagri') }}">About</a>
+                <a href="{{ url_for('weather') }}">Weather</a>
+                <a href="#">Market</a>
+                <a href="{{ url_for('account') }}">Account</a>
+            </nav>
+            <div class="search-button">
+                <img src="../static/images/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+        </header>
+
+        <form method="post">
+            <p>
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" placeholder="First Name">
+            </p>
+            <p>
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" placeholder="Last Name">
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email">
+            </p>
+            <p>
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" name="phonenumber" placeholder="Phone Number">
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <footer>
+            <p>&copy; UBagri</p>
+        </footer>
+    </body>
+</html>

@@ -12,6 +12,9 @@
 
 .container h1 {
     margin-top: 70px;
+    font-size: 30px;
+    color: blue;
+    margin-bottom: 5px;
 }
 
 .upper, .middle {
@@ -28,7 +31,9 @@ p {
 }
 
 .upper p {
-    text-align: left;
+    margin-top: 5px;
+    text-align: start;
+    width: 40%;
 }
 
 .upper section,

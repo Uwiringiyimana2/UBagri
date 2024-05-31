@@ -6,7 +6,7 @@
 }
 
 .upper-section .title {
-    flex-basis: 70%;
+    flex-basis: 65%;
 }
 
 .upper-section .title h2 {
@@ -29,6 +29,13 @@
     font-weight: 800;
     text-align: center;
     border-radius: 5px;
+}
+
+.upper-section .title button {
+    background-color: green;
+    font-size: 18px;
+    font-weight: 800;
+    border: none;
 }
 
 .upper-section .date {
@@ -143,4 +150,13 @@ input {
 .weather_description {
     color: white;
     margin-top: 2rem;
+}
+
+#season {
+    background-color: #032541;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }

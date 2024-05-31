@@ -9,3 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateDate();
 })
+
+$(document).ready(function () {
+    $('.upper-section button').click(function () {
+        const weather = `
+        <p>Season: Rainy season</p>
+        <p>Weather: light season</p>
+        <p>Expected highest Temperature: 25 C</p>
+        <p>Expected lowest Temperature: 18 C</p>
+        <p>Activities: Growing Season</p>
+        `;
+        $('#season').html(weather);
+    });
+});
